@@ -20,6 +20,8 @@ import PasswordForgetPage from './components/PasswordForget'
 import PasswordChangePage from './components/PasswordChange'
 import AccountPage from './components/Account'
 import LandingPage from './components/Landing'
+import ScreenPage from './components/Screen'
+import AdminPage from './components/Admin'
 
 class App extends Component {
 
@@ -49,17 +51,19 @@ class App extends Component {
       <Router>
           <div>
             <Navigation authUser={this.state.authUser} />
-
-            <hr />
-      
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-            <Route path={ROUTES.PASSWORD_CHANGE} component={PasswordChangePage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-            <Route path={ROUTES.CAPCHA} component={Capcha} />
+           
+            <div  className="p-3">
+              <Route exact path={ROUTES.LANDING} component={LandingPage} />
+              <Route exact path={ROUTES.SCREEN} component={ScreenPage} />
+              <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+              <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+              <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+              <Route path={ROUTES.PASSWORD_CHANGE} component={PasswordChangePage} />
+              <Route path={ROUTES.HOME} component={ScreenPage} />
+              <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+              <Route path={ROUTES.CAPCHA} component={Capcha} />
+              <Route path={ROUTES.ADMIN} component={AdminPage} />
+            </div>
           </div>
         </Router>);
   }

@@ -6,7 +6,6 @@ import RoomList from '../Room';
 
 const HomePage = () => (
   <div>
-    
     <RoomList></RoomList>
     <hr/>
     <p className="m-3 text-muted text-sm">

@@ -31,3 +31,30 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.w-xxl {
+  width: 320px;
+}
+.w-xxl {
+  width: 60px;
+}
+.p-v-md {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+
+

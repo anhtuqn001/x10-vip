@@ -7,8 +7,8 @@ const LandingPage = () => (<div>
     <p className="h1">Welcome</p>
 </div>);
 
-// const condition = authUser => !!authUser;
+const condition = authUser => !!authUser;
 
-// export default withAuthorization(condition)(LandingPage);
-export default LandingPage;
+export default withAuthorization(condition)(LandingPage);
+// export default LandingPage;
 

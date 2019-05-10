@@ -1,0 +1,29 @@
+.container>div {
+    width: 33%;
+    text-align: center;
+    font-size: 36px;
+}
+
+#diff:after {
+    content: "%";
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.tickers {
+    font-size: .6em;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: .5em;
+
+}
+
+.tickers span {
+    float: right;
+}

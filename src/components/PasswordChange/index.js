@@ -9,10 +9,7 @@ const INITIAL_STATE = {
     error: null
 };
 
-const PasswordChangePage = () => (<div>
-    <h1>Change Password</h1>
-    <PasswordChangeForm />
-</div>);
+const PasswordChangePage = () => (<PasswordChangeForm />);
 
 class PasswordChangeFormBase extends Component {
     constructor(props) {
