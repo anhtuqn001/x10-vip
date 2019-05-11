@@ -50,7 +50,7 @@ class ScreenPage extends Component {
             },
             buy: {
                 trend: defaultVolume('Trend of Buying'),
-                volume: defaultVolume('Sell Volume'),
+                volume: defaultVolume('Buy Volume'),
                 tickers: {...INIT_TICKERS},
             },
             diff: {

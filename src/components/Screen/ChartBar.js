@@ -81,7 +81,7 @@ class BarChart extends Component {
         //     options={this.state.options} 
         //     series={this.state.series} 
         //     type="radialBar" height={350} />);
-        console.log(this.props);
+        // console.log(this.props);
         return (<Chart 
             {...this.props} type="bar" height={50} />);
     }
