@@ -55,9 +55,9 @@ class VolumeChart extends Component {
                 dataLabels: {
                     enabled: true,
                     formatter: formatVolume,
-                    style: {
-                        colors: ['#333']
-                    },
+                    // style: {
+                    //     colors: ['#333']
+                    // },
                     offsetX: 10
                 },
                 stroke: {

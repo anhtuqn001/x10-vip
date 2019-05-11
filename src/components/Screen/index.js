@@ -4,8 +4,10 @@ import * as SocketClient from '../Socket';
 import {withAuthorization} from '../Session';
 import Chart from './Chart';
 // import ChartRadar from './ChartRadar';
-import SpeedOmeter from './SpeedOmeter';
+// import SpeedOmeter from './SpeedOmeter';
 import ReactSpeedometer from 'react-d3-speedometer';
+import BarChart, {DEFAULT_CHART_OPTION} from './ChartBar';
+import HeatmapChart from './ChartHeatMap';
 
 const TIMES = [60, 180, 300, 1800, 3600, 21600, 86400];
 const  SCALE = 50;
@@ -39,10 +41,10 @@ class ScreenPage extends Component {
         super(props);
 
         var defaultVolume = (name) => ({name, volume: 0});
-
+        //colors: ['#FF4560', '#008FFB'],
         this.state = {
             sell: {
-                trend: defaultVolume('Trend of Selling'),
+                trend: {...defaultVolume('Trend of Selling'), chartOptions: {colors: ['#FF4560', '#008FFB'],}},
                 volume: defaultVolume('Sell Volume'),
                 tickers: {...INIT_TICKERS},
             },
@@ -163,7 +165,8 @@ class ScreenPage extends Component {
             value: signals.dump,
             maxValue: signals.count,
             startColor: "#33CC33",
-            endColor: "#FF471A"
+            endColor: "#FF471A",
+            currentValueText:"DUMP ${value}"
         };
 
         const buyMeterOption = {
@@ -172,7 +175,8 @@ class ScreenPage extends Component {
             segments:signals.count,
             maxValue: signals.count,
             value:signals.pump,
-            endColor:"blue"
+            endColor:"blue",
+            currentValueText:"PUMP ${value}"
         };
 
         return(<div className="row justify-content-md-center">
@@ -180,6 +184,7 @@ class ScreenPage extends Component {
             <div className="col-md-4 col-lg-3  text-center h3">
                 <VolumeRate {...diff}></VolumeRate>
                 <Chart series={series}  ></Chart>
+                {/* <HeatmapChart/> */}
             </div>
             {signals.count && (<Stats {...buy} meter={buyMeterOption}/>)}
         </div>);
@@ -200,17 +205,30 @@ const Volume = ({name,volume}) => (<div className="h3 pt-3">
     <p className="m-3">{volume}</p>
 </div>);
 
+const VolumeBar = ({name, volume, chartOptions}) => {
+    var options = Object.assign({}, {...DEFAULT_CHART_OPTION}, chartOptions || {});
+    options.xaxis.categories = [name];
+    
+    let series = [{data: [parseFloat(volume)]}];
+
+    return (<div className="h3">
+        <p className="title">{name}</p>
+        <BarChart options={options} series={series} />
+    </div>);
+};
+
 const VolumeRate = ({name, rate}) => (<div className="h3 pt-3">
      <p>{name}</p>
     <div  className={rate > 0? "green": "red"} >
-        {rate}
+        {rate}%
     </div>
 </div>);
 
 
 const Stats = ({trend, volume, tickers, meter}) => (
     <div className="col-md-4 col-lg-3 text-center h3">
-        <Volume {...trend} />
+        {/* <Volume {...trend} /> */}
+        <VolumeBar {...trend} />
         <Volume {...volume} />
         <Tickers tickers={tickers} />
         <ReactSpeedometer {...meter}/>
