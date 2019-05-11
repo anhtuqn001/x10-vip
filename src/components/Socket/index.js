@@ -1,5 +1,8 @@
 import openSocket from 'socket.io-client';
-// const  socket = openSocket('http://35.247.158.183:8081/');
+// const  socket = openSocket('http://localhost:8081/', {
+//     path: '/api'
+// });
+
 const  socket = openSocket('https://api.x10.vip/', {
     path: '/api'
 });

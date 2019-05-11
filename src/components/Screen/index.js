@@ -93,29 +93,30 @@ class ScreenPage extends Component {
     }
 
     onTradeRecords = (data) => {
-        var ticker = data.timer;
+        var tickers = Object.keys(data);
         let {sell, buy, sells, buys} = this.state;
-        var value = data.value;
-        sell.tickers[ticker] = parseFloat(value.sell).toFixed(2);
-        buy.tickers[ticker] = parseFloat(value.buy).toFixed(2);
-        
-
-        var index = TIMES.indexOf(ticker);
-
-        var diff = (new Date().getTime() - value.current);
-
-        if (index >= 0 && diff > 1000) {
-            var scale = diff / (value.next - value.current);
-            var rate = (60 / ticker) / scale;
-            var normalizeBuy = ((value.buy * rate) / SCALE).toFixed(2);
-            var normalizeSell = ((value.sell * rate) / SCALE).toFixed(2);
-
-            // app.series[0].data.splice(index, 1, -normalizeSell);
-            // app.series[1].data.splice(index, 1, normalizeBuy);
-            sells.splice(index, 1, -normalizeSell);
-            buys.splice(index, 1, normalizeBuy);
-        }
-
+        tickers.forEach(ticker => {       
+            var value = data[ticker];
+            ticker = parseFloat(ticker);
+            sell.tickers[ticker] = parseFloat(value.sell).toFixed(2);
+            buy.tickers[ticker] = parseFloat(value.buy).toFixed(2);
+            
+            var index = TIMES.indexOf(ticker);
+    
+            var diff = (new Date().getTime() - value.current);
+    
+            if (index >= 0 && diff > 1000) {
+                var scale = diff / (value.next - value.current);
+                var rate = (60 / ticker) / scale;
+                var normalizeBuy = ((value.buy * rate) / SCALE).toFixed(2);
+                var normalizeSell = ((value.sell * rate) / SCALE).toFixed(2);
+    
+                sells.splice(index, 1, -normalizeSell);
+                buys.splice(index, 1, normalizeBuy);
+            }
+    
+        });
+      
         this.setState({sell, buy, sells, buys});   
     }
 
