@@ -71,8 +71,8 @@ class VolumeChart extends Component {
                     }
                 },
                 yaxis: {
-                    min: -7,
-                    max: 7,
+                    min: -10,
+                    max: 10,
                     title: {
                         // text: 'Age',
                     },
