@@ -276,7 +276,10 @@ const VolumeRate = ({name, rate}) => (<div className="h3 pt-3">
     </div>
 </div>);
 
+const WHITE_LIST 
+= ['info@vntimes.com.vn', 'uyen@vntimes.com.vn', 'anhtuqn001@gmail.com', 'vanthanhtung2612@gmail.com', 'trieu.learn@gmail.com', 'van.huynhduc92@gmail.com'];
 
-const condition = authUser => !!authUser;
+const condition = authUser => !!authUser && WHITE_LIST.indexOf(authUser.email) >= 0;
+// const condition = authUser => !!authUser;
 
 export default withAuthorization(condition)(ScreenPage);
