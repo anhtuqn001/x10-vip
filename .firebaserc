@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "x10-vip"
+  },
+  "targets": {
+    "x10-vip": {
+      "hosting": {
+        "x10": [
+          "x10.vip"
+        ],
+        "korea": [
+          "x10-korea"
+        ],
+        "stage": [
+          "x10-dev"
+        ]
+      }
+    }
+  }
+}

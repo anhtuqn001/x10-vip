@@ -1,0 +1,76 @@
+.md-whiteframe-z0 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.w-40 {
+    width: 40px;
+    height: 40px;
+}
+
+.m-r {
+    margin-right: 16px;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+.block {
+    display: block;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-success {
+    color: #4caf50;
+}
+.pull-right {
+    float: right!important;
+}
+
+.w-xs {
+    width: 90px;
+}
+.inline {
+    display: inline-block;
+}
+
+.r-t {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.p-lg {
+    padding: 32px;
+}
+.bg-white-overlay {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.tickers {
+
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: .5em;
+
+}
+
+.tickers span {
+    float: right;
+}

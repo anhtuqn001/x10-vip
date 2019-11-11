@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142102445-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142102445-1');
+</script>
+
+
+  <meta charset="utf-8" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicon-76.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+
+  <title>Margix</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+ 
+</head>
+
+<body >
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root" ></div>
+  <div class="collapse m-3" id="purchase-page">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="container" style="max-width:1000px">
+          <div class="row">
+            <div class="col-lg-6 m-3">
+              <div class="row bg-primary text-white justify-content-center" style="height:10%">
+                <h4 >Starter Package</h4>
+              </div>
+              <div class="row" style="height:45%">
+                <p class="p-3 text-secondary">While the getting started pages provide an introductory tour of the project
+                  and what it offers, this document focuses on why we do the things we do in Bootstrap. It explains our
+                  philosophy to building on the web so that others can learn from us, contribute with us, and help us
+                  improve.</p>
+                
+              </div>
+              <p class="h5 text-secondary">Points: 300</p>
+              <p class="h5 text-secondary">Total: $126</p>
+              <hr>
+             
+              <div class="row align-items-center">
+                <div class="p-2" id="buy-button-container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Modal -->
+
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      function showPurchasePage(cb) {
+        processCallback = cb;
+        $("#purchase-page").removeClass('collapse');
+      }
+  
+      function hidePurchasePage() {
+        processCallback = null;
+        $("#purchase-page").addClass('collapse');
+      }
+    </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script> -->
+  <script  src="gp.js"></script>
+  <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
+  <script src="common.js"></script>
+</body>
+
+</html>
