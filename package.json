@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "apexcharts": "^3.8.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "co": "^4.6.0",
     "co-wait": "0.0.0",
     "firebase": "^5.11.1",
